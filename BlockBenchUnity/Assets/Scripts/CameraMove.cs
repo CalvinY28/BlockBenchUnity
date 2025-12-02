@@ -3,51 +3,48 @@ using UnityEngine.InputSystem;
 
 public class CameraMove : MonoBehaviour
 {
-    [Header("Sway Amount")]
-    [Tooltip("How far the camera moves in local space based on mouse position.")]
-    public float swayAmount = 0.05f;
-
-    [Tooltip("Maximum offset so the effect stays subtle.")]
-    public float maxSway = 0.1f;
+    [Header("Rotation Amount")]
+    [Tooltip("How much the camera can rotate in degrees.")]
+    public float rotationAmount = 5f;   // small angle like 3–7 degrees
 
     [Header("Smoothness")]
-    [Tooltip("How quickly the camera follows the mouse.")]
     public float smoothSpeed = 5f;
 
-    private Vector3 initialLocalPos;
+    private Quaternion initialRotation;
 
     void Start()
     {
-        initialLocalPos = transform.localPosition;
+        initialRotation = transform.localRotation;
     }
 
     void Update()
     {
-        // Make sure we have a mouse (will be null on some platforms)
         if (Mouse.current == null)
             return;
 
-        // Read mouse position from the new Input System
+        // Read mouse position
         Vector2 mousePos = Mouse.current.position.ReadValue();
 
-        // Normalize to 0..1
+        // Normalize to 0–1
         float normX = mousePos.x / Screen.width;
         float normY = mousePos.y / Screen.height;
 
-        // Convert to -1..1 (center of screen = 0,0)
+        // Convert to -1..1 (center = 0)
         float mouseX = (normX - 0.5f) * 2f;
         float mouseY = (normY - 0.5f) * 2f;
 
-        // Calculate offset
-        float offsetX = Mathf.Clamp(mouseX * swayAmount, -maxSway, maxSway);
-        float offsetY = Mathf.Clamp(mouseY * swayAmount, -maxSway, maxSway);
+        // Calculate target rotation
+        // Mouse X → look left/right (Yaw)
+        // Mouse Y → look up/down (Pitch)
+        float targetYaw = -mouseX * rotationAmount;   // invert if needed
+        float targetPitch = mouseY * rotationAmount;
 
-        Vector3 targetLocalPos = initialLocalPos + new Vector3(offsetX, offsetY, 0f);
+        Quaternion targetRot = initialRotation * Quaternion.Euler(targetPitch, targetYaw, 0f);
 
-        // Smoothly move toward target
-        transform.localPosition = Vector3.Lerp(
-            transform.localPosition,
-            targetLocalPos,
+        // Smooth rotation
+        transform.localRotation = Quaternion.Lerp(
+            transform.localRotation,
+            targetRot,
             Time.deltaTime * smoothSpeed
         );
     }
