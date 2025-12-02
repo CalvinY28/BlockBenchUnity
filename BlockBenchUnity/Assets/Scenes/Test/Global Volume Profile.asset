@@ -113,22 +113,22 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 0
-    m_Value: 0.9
+    m_Value: 1.24
   intensity:
     m_OverrideState: 1
     m_Value: 24.61
   scatter:
     m_OverrideState: 0
-    m_Value: 0.7
+    m_Value: 0
   clamp:
     m_OverrideState: 0
-    m_Value: 65472
+    m_Value: 65547.03
   tint:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   downscale:
     m_OverrideState: 0
     m_Value: 0
@@ -137,11 +137,11 @@ MonoBehaviour:
     m_Value: 6
   dirtTexture:
     m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 2800000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
     dimension: 1
   dirtIntensity:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 9.88
 --- !u!114 &-470378714047520185
 MonoBehaviour:
   m_ObjectHideFlags: 3
