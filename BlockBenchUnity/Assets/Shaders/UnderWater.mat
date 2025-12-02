@@ -38,8 +38,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _Amplitude: 0
-    - _Blend: 0.056
-    - _NoiseScale: 15
+    - _Blend: 0.03
+    - _NoiseScale: 9
     m_Colors:
     - _WaterSpeed: {r: 0.02, g: -0.05, b: 0, a: 0}
   m_BuildTextureStacks: []
