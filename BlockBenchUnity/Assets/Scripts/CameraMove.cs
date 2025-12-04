@@ -5,7 +5,7 @@ public class CameraMove : MonoBehaviour
 {
     [Header("Rotation Amount")]
     [Tooltip("How much the camera can rotate in degrees.")]
-    public float rotationAmount = 5f;   // small angle like 3–7 degrees
+    public float rotationAmount = 5f;
 
     [Header("Smoothness")]
     public float smoothSpeed = 5f;
@@ -29,14 +29,14 @@ public class CameraMove : MonoBehaviour
         float normX = mousePos.x / Screen.width;
         float normY = mousePos.y / Screen.height;
 
-        // Convert to -1..1 (center = 0)
+        // Convert to -1 and 1 (center = 0)
         float mouseX = (normX - 0.5f) * 2f;
         float mouseY = (normY - 0.5f) * 2f;
 
         // Calculate target rotation
-        // Mouse X → look left/right (Yaw)
-        // Mouse Y → look up/down (Pitch)
-        float targetYaw = -mouseX * rotationAmount;   // invert if needed
+        // Mouse X -> look left/right (Yaw)
+        // Mouse Y -> look up/down (Pitch)
+        float targetYaw = -mouseX * rotationAmount;
         float targetPitch = mouseY * rotationAmount;
 
         Quaternion targetRot = initialRotation * Quaternion.Euler(targetPitch, targetYaw, 0f);
