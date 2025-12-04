@@ -435,6 +435,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -6.739
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 6e0b5f10a03923f41b1190c40632a032, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: af1f3e622abcd8744b8633b2a4e0203a, type: 2}
     - target: {fileID: 919132149155446097, guid: 6e0b5f10a03923f41b1190c40632a032, type: 3}
       propertyPath: m_Name
       value: Fishes (2)
@@ -13822,6 +13826,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -20.892
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 6e0b5f10a03923f41b1190c40632a032, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: af1f3e622abcd8744b8633b2a4e0203a, type: 2}
     - target: {fileID: 919132149155446097, guid: 6e0b5f10a03923f41b1190c40632a032, type: 3}
       propertyPath: m_Name
       value: Fishes
@@ -19855,6 +19863,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.191
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 6e0b5f10a03923f41b1190c40632a032, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: af1f3e622abcd8744b8633b2a4e0203a, type: 2}
     - target: {fileID: 919132149155446097, guid: 6e0b5f10a03923f41b1190c40632a032, type: 3}
       propertyPath: m_Name
       value: Fishes (3)
